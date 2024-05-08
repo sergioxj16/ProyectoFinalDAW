@@ -1,0 +1,27 @@
+{
+    "remotePath": "/www/ProyectoFinalHtml",
+    "host": "ftp.cluster029.hosting.ovh.net",
+    "username": "sergios",
+    "password": "27102003Ff1",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}

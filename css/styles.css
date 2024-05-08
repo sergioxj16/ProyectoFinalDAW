@@ -1,0 +1,25 @@
+#contenedor-personajes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.tarjeta {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.tarjeta img {
+    width: 100%;
+    height: auto;
+}
+
+.tarjeta h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.tarjeta p {
+    font-size: 16px;
+}
