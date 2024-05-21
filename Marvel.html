@@ -7,23 +7,27 @@
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <div id="fondo-titulo">
-        <div id="titulo">
+    <div id="marvel-titulo">
+        <div id="fondo-titulo">
             <h1>MARVEL</h1>
         </div>
     </div>
 
-    <div id="busqueda">
-        <input type="text" id="nombre-personaje" placeholder="Nombre del personaje">
+    <div id="contenedor">
+        <h2>Bienvenido</h2>
+        <label for="nombre-personaje">Buscar personaje de Marvel:</label>
+        <input type="text" id="nombre-personaje">
         <button id="boton-buscar">Buscar</button>
-    </div>
-    
-    <div id="info-personaje">
-        <!-- La información del personaje se llenará aquí -->
-    </div>
+        
+        <div id="info-personaje"></div>
 
-    <div id="contenedor-comics">
-        <!-- Los cómics se llenarán aquí -->
+        <div id="contenedor-comics" class="contenedor-lado">
+            <h3 id="subtitulo-comics" style="display: none;">Comics y Autores</h3>
+        </div>
+
+        <div id="contenedor-series" class="contenedor-lado">
+            <h3 id="subtitulo-series" style="display: none;">Series</h3>
+        </div>
     </div>
 
     <script src="./js/javascript.js"></script>

@@ -1,81 +1,128 @@
 body {
-    font-family: "Futura", sans-serif;
-    background-color: white;
-}
-#fondo-titulo {
-    display: flex;
-    justify-content: center;
-    background-color: rgb(0, 0, 0);
-    padding: 0;
-}
-#busqueda {
-    display: flex;
-    padding-top: 1rem;
-    justify-content: center;
-    gap: 10px;
-}
-#titulo {
-    justify-content: center;
-    background-color: red;
-    color: rgb(255, 255, 255);
-    padding: 1rem;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: -4.5px;
-}
-#nombre-personaje{
-    display: flex;
-    justify-content: center;
-}
-#contenedor-personajes {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-    padding: 10px;
-}
-
-.tarjeta {
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-.tarjeta {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-
-.tarjeta img {
-    width: 20%;
-    height: auto;
-}
-
-.tarjeta h1 {
-    font-size: 20px;
+    font-family: Arial, sans-serif;
     margin: 0;
+    padding: 0;
+    background-color: #ffffff;
 }
 
-#contenedor-comics {
+#contenedor {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contenedor-secciones {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
+    justify-content: space-between;
+}
+
+.seccion {
+    width: 48%;
+}
+
+.tarjeta {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    animation: fade-in 3s forwards;
+}
+
+img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 5px;
+    display: block; 
+    margin: 0 auto;
 }
 
 .tarjeta-comic {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slide-in 0.5s forwards;
+}
+
+.tarjeta-serie {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide-in 0.5s forwards;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#marvel-titulo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#fondo-titulo {
+    background-color: rgb(255, 0, 0);
+    display: inline-block;
+    border-radius: 5px;
     padding: 10px;
 }
 
-.tarjeta-comic h2 {
-    font-size: 16px;
+#fondo-titulo h1 {
+    color: #ffffff;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 3em;
     margin: 0;
 }
 
-.tarjeta-comic ul {
-    list-style-type: none;
-    padding: 0;
+#nombre-personaje {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 60%; 
+}
+
+#boton-buscar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 1s ease;
+}
+
+#boton-buscar:hover {
+    background-color: #45a049;
+}
+
+#nombre-personaje, #boton-buscar {
+    display: block;
+    margin: 0 auto;
 }
