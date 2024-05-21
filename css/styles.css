@@ -1,3 +1,32 @@
+body {
+    font-family: "Futura", sans-serif;
+    background-color: white;
+}
+#fondo-titulo {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    padding: 0;
+}
+#busqueda {
+    display: flex;
+    padding-top: 1rem;
+    justify-content: center;
+    gap: 10px;
+}
+#titulo {
+    justify-content: center;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -4.5px;
+}
+#nombre-personaje{
+    display: flex;
+    justify-content: center;
+}
 #contenedor-personajes {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -10,8 +39,16 @@
     padding: 10px;
 }
 
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
 .tarjeta img {
-    width: 100%;
+    width: 20%;
     height: auto;
 }
 
@@ -20,6 +57,25 @@
     margin: 0;
 }
 
-.tarjeta p {
+#contenedor-comics {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.tarjeta-comic {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.tarjeta-comic h2 {
     font-size: 16px;
+    margin: 0;
+}
+
+.tarjeta-comic ul {
+    list-style-type: none;
+    padding: 0;
 }
