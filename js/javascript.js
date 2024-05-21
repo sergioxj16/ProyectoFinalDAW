@@ -37,3 +37,62 @@ function mostrarPersonaje(personaje) {
     `;
 }
 
+function buscarComics(urlComics) {
+    const urlComicsSeguro = urlComics.replace('http://', 'https://') + `?apikey=${clavePublica}`;
+    fetch(urlComicsSeguro)
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+            let comics = datos.data.results;
+            mostrarComics(comics);
+        });
+}
+
+function mostrarComics(comics) {
+    let contenedorComics = document.getElementById('contenedor-comics');
+    contenedorComics.innerHTML = '';
+    comics.forEach(comic => {
+        let tarjetaComic = document.createElement('div');
+        tarjetaComic.className = 'tarjeta-comic';
+        tarjetaComic.innerHTML = `
+            <h2>${comic.title}</h2> 
+            <ul></ul>
+        `;
+        let listaCreadores = tarjetaComic.querySelector('ul');
+        comic.creators.items.forEach(creador => {
+            let elementoLista = document.createElement('li');
+            elementoLista.textContent = `${creador.name} (${creador.role})`;
+            listaCreadores.appendChild(elementoLista);
+        });
+        contenedorComics.appendChild(tarjetaComic);
+    });
+
+    document.getElementById('subtitulo-comics').style.display = 'block';
+    document.getElementById('contenedor-comics').style.display = 'block';
+}
+
+function buscarSeries(nombre) {
+    const urlSeries = `${urlSeriesBase}${nombre}&apikey=${clavePublica}`;
+    fetch(urlSeries)
+        .then(respuesta => respuesta.json())
+        .then(datos => {
+            let series = datos.data.results;
+            mostrarSeries(series);
+        });
+}
+
+function mostrarSeries(series) {
+    let contenedorSeries = document.getElementById('contenedor-series');
+    contenedorSeries.innerHTML = '';
+    series.forEach(serie => {
+        let tarjetaSerie = document.createElement('div');
+        tarjetaSerie.className = 'tarjeta-objeto';
+        tarjetaSerie.innerHTML = `
+            <h4>${serie.title}</h4> 
+            <p>${serie.description}</p>
+        `;
+        contenedorSeries.appendChild(tarjetaSerie);
+    });
+
+    document.getElementById('subtitulo-series').style.display = 'block';
+    document.getElementById('contenedor-series').style.display = 'block';
+}

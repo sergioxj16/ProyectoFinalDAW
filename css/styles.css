@@ -39,24 +39,21 @@ img {
     margin: 0 auto;
 }
 
-.tarjeta-comic {
+.tarjeta-comic, .tarjeta-serie {
     background-color: #fff;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     opacity: 0;
-    transform: translateX(-100%);
     animation: slide-in 0.5s forwards;
 }
 
+.tarjeta-comic {
+    transform: translateX(-100%);
+}
+
 .tarjeta-serie {
-    background-color: #fff;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    opacity: 0;
     transform: translateX(100%);
-    animation: slide-in 0.5s forwards;
 }
 
 @keyframes fade-in {
